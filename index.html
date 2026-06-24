@@ -1,0 +1,324 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IT Shop Mega Menu</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* Header */
+
+header{
+    background:#0f172a;
+    padding:0 5%;
+    position:relative;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo h2{
+    color:white;
+    padding:18px 0;
+    font-size:28px;
+}
+
+/* Menu */
+
+.menu{
+    display:flex;
+    list-style:none;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:white;
+    text-decoration:none;
+    padding:22px 18px;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#fa3fcb96;
+}
+
+/* Mega Menu */
+
+.mega-content{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:1100px;
+    background:white;
+    display:none;
+    padding:30px;
+    border-radius:0 0 12px 12px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+    grid-template-columns:
+    repeat(4,1fr) 280px;
+
+    gap:25px;
+    z-index:999;
+}
+
+.mega-menu:hover .mega-content{
+    display:grid;
+}
+
+/* Columns */
+
+.column h3{
+    color:#0f172a;
+    margin-bottom:15px;
+    border-bottom:2px solid #0d6efd;
+    padding-bottom:8px;
+}
+
+.column a{
+    display:block;
+    color:#333 !important;
+    padding:8px 0 !important;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.column a:hover{
+    color:#0d6efd !important;
+    padding-left:8px !important;
+    background:none !important;
+}
+
+/* Promo Box */
+
+.promo{
+    background:#f8fafc;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #e2e8f0;
+}
+
+.promo img{
+    width:100%;
+    border-radius:10px;
+}
+
+.promo h3{
+    margin:15px 0 10px;
+    color:#dc2626;
+}
+
+.promo p{
+    color:#555;
+    font-size:15px;
+}
+
+.promo button{
+    margin-top:15px;
+    padding:12px 20px;
+    background:#dc2626;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.promo button:hover{
+    background:#b91c1c;
+}
+
+/* Hero */
+
+.hero{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#181136;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#555;
+    font-size:20px;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .menu{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .menu li{
+        width:100%;
+    }
+
+    .menu li a{
+        width:100%;
+    }
+
+    .mega-content{
+        position:static;
+        width:100%;
+        grid-template-columns:1fr;
+        display:none;
+        border-radius:0;
+    }
+
+    .mega-menu:hover .mega-content{
+        display:grid;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+            <h2>IT Shop</h2>
+        </div>
+
+        <ul class="menu">
+
+            <li><a href="#"><i class="fas fa-house"></i> หน้าแรก</a></li>
+
+            <li class="mega-menu">
+
+                <a href="#">
+                    สินค้า
+                    <i class="fas fa-angle-down"></i>
+                </a>
+
+                <div class="mega-content">
+
+                    <div class="column">
+                        <h3>คอมพิวเตอร์</h3>
+                        <a href="#">Desktop PC</a>
+                        <a href="#">Gaming PC</a>
+                        <a href="#">Mini PC</a>
+                        <a href="#">Workstation</a>
+                    </div>
+
+                    <div class="column">
+                        <h3>โน้ตบุ๊ก</h3>
+                        <a href="#">Gaming Notebook</a>
+                        <a href="#">Business Notebook</a>
+                        <a href="#">Ultrabook</a>
+                        <a href="#">MacBook</a>
+                    </div>
+
+                    <div class="column">
+                        <h3>อุปกรณ์เครือข่าย</h3>
+                        <a href="#">Router</a>
+                        <a href="#">Switch</a>
+                        <a href="#">Access Point</a>
+                        <a href="#">Firewall</a>
+                    </div>
+
+                    <div class="column">
+                        <h3>อุปกรณ์เสริม</h3>
+                        <a href="#">Keyboard</a>
+                        <a href="#">Mouse</a>
+                        <a href="#">Headset</a>
+                        <a href="#">Webcam</a>
+                    </div>
+
+                    <div class="promo">
+
+                        <img src="https://picsum.photos/300/200" alt="Promotion">
+
+                        <h3>🔥 โปรโมชั่นพิเศษ</h3>
+
+                        <p>
+                            ลดสูงสุด 50% สำหรับสินค้า Gaming Gear
+                            วันนี้เท่านั้น
+                        </p>
+
+                        <button>ช้อปเลย</button>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li><a href="#"><i class="fas fa-tags"></i> โปรโมชั่น</a></li>
+
+            <li><a href="#"><i class="fas fa-newspaper"></i> บทความ</a></li>
+
+            <li><a href="#"><i class="fas fa-phone"></i> ติดต่อเรา</a></li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+    <h1>ยินดีต้อนรับสู่ IT Shop</h1>
+
+    <p>
+        ร้านค้าออนไลน์สำหรับอุปกรณ์คอมพิวเตอร์
+        เกมมิ่งเกียร์ และอุปกรณ์ไอทีครบวงจร
+    </p>
+
+</section>
+
+</body>
+</html>
+```
